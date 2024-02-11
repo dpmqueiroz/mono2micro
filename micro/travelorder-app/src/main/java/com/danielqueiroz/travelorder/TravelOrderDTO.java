@@ -1,7 +1,7 @@
 package com.danielqueiroz.travelorder;
 
-import com.danielqueiroz.flight.Flight;
-import com.danielqueiroz.hotel.Hotel;
+import com.danielqueiroz.travelorder.flightservice.Flight;
+import com.danielqueiroz.travelorder.hotelservice.Hotel;
 
 public class TravelOrderDTO {
 
@@ -25,7 +25,7 @@ public class TravelOrderDTO {
         if(hotel == null){
             hotel = new Hotel();
         }
-        return new TravelOrderDTO(flight.fromAirport, flight.toAirport, hotel.nights);
+        return new TravelOrderDTO(flight.getFromAirport(), flight.getToAirport(), hotel.getNights());
     }
 
     public static TravelOrderDTO of(String fromAirport, String toAirport, Integer nights){
