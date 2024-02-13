@@ -25,8 +25,8 @@ public class HotelResource {
     @GET
     @Path("findByTravelOrderId")
     @Produces(MediaType.APPLICATION_JSON)
-    public Hotel findByTravelOrderId(@QueryParam("travelOrderId") Long travelOrderId){
-
+    public Hotel findByTravelOrderId(@QueryParam("travelOrderId") Long travelOrderId) throws InterruptedException {
+        Thread.sleep(3000);
         return Hotel.findByTravelOrderId(travelOrderId);
     }
 
